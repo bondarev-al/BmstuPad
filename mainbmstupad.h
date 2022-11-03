@@ -2,6 +2,7 @@
 #define MAINBMSTUPAD_H
 
 #include <QMainWindow>
+#include <QFileDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainBmstuPad; }
@@ -15,7 +16,11 @@ public:
     MainBmstuPad(QWidget *parent = nullptr);
     ~MainBmstuPad();
 
+private slots:
+    void on_openFileAction_triggered();
+
 private:
     Ui::MainBmstuPad *ui;
+    QString fileName;
 };
 #endif // MAINBMSTUPAD_H
