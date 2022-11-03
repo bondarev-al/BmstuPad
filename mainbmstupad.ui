@@ -54,6 +54,8 @@
     </property>
     <addaction name="newFileAction"/>
     <addaction name="openFileAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction_2"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -62,10 +64,38 @@
    <property name="text">
     <string>Новый</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
   <action name="openFileAction">
    <property name="text">
     <string>Открыть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="saveAsAction_2">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
    </property>
   </action>
  </widget>

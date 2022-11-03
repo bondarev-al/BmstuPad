@@ -19,6 +19,8 @@ public:
 private slots:
     void on_openFileAction_triggered();
 
+    void on_saveAction_triggered();
+
 private:
     Ui::MainBmstuPad *ui;
     QString fileName;

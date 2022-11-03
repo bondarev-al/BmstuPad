@@ -29,6 +29,12 @@ void MainBmstuPad::on_openFileAction_triggered()
             line.chop(1);
             ui->mainTextEdit->append(line);
         }
+        ui->saveAction->setEnabled(true);
         file.close();
     }
+}
+
+void MainBmstuPad::on_saveAction_triggered()
+{
+
 }
