@@ -30,6 +30,8 @@ private slots:
 
     void closeEvent(QCloseEvent *event);
 
+    void on_newFileAction_triggered();
+
 private:
     Ui::MainBmstuPad *ui;
     QString fileName;

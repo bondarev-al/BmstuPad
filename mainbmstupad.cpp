@@ -86,3 +86,14 @@ void MainBmstuPad::on_mainTextEdit_textChanged()
 {
     textChanged = true;
 }
+
+void MainBmstuPad::on_newFileAction_triggered()
+{
+    QString name = QFileDialog::getSaveFileName(0, "Новый файл");
+    if (name != "")
+    {
+        fileName = name;
+        ui->mainTextEdit->clear();
+        MainBmstuPad::on_saveAction_triggered();
+    }
+}
