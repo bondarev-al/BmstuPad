@@ -36,5 +36,19 @@ void MainBmstuPad::on_openFileAction_triggered()
 
 void MainBmstuPad::on_saveAction_triggered()
 {
+    if (fileName != "")
+    {
+         QTextDocumentWriter writer(fileName, "plaintext");
+         writer.write(ui->mainTextEdit->document());
+    }
+}
 
+void MainBmstuPad::on_saveAsAction_triggered()
+{
+    QString name = QFileDialog::getSaveFileName(0, "Сохранить как");
+    if (name != "")
+    {
+        fileName = name;
+        MainBmstuPad::on_saveAction_triggered();
+    }
 }

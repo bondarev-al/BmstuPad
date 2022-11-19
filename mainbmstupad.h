@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QTextDocumentWriter>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainBmstuPad; }
@@ -20,6 +21,8 @@ private slots:
     void on_openFileAction_triggered();
 
     void on_saveAction_triggered();
+
+    void on_saveAsAction_triggered();
 
 private:
     Ui::MainBmstuPad *ui;

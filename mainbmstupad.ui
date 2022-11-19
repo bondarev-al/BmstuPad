@@ -55,7 +55,7 @@
     <addaction name="newFileAction"/>
     <addaction name="openFileAction"/>
     <addaction name="saveAction"/>
-    <addaction name="saveAsAction_2"/>
+    <addaction name="saveAsAction"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -90,7 +90,7 @@
     <string>Ctrl+S</string>
    </property>
   </action>
-  <action name="saveAsAction_2">
+  <action name="saveAsAction">
    <property name="text">
     <string>Сохранить как</string>
    </property>
