@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QMessageBox>
 #include <QTextDocumentWriter>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainBmstuPad; }
@@ -24,8 +26,13 @@ private slots:
 
     void on_saveAsAction_triggered();
 
+    void on_mainTextEdit_textChanged();
+
+    void closeEvent(QCloseEvent *event);
+
 private:
     Ui::MainBmstuPad *ui;
     QString fileName;
+    bool textChanged = false;
 };
 #endif // MAINBMSTUPAD_H

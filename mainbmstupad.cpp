@@ -13,6 +13,33 @@ MainBmstuPad::~MainBmstuPad()
     delete ui;
 }
 
+void MainBmstuPad::closeEvent(QCloseEvent *event)
+{
+    bool cansel = false;
+    if (textChanged)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Документ был изменен.");
+        msgBox.setInformativeText("Вы хотите сохранить изменения?");
+        msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Save);
+        msgBox.setIcon(QMessageBox::Question);
+        int ret = msgBox.exec();
+        switch (ret) {
+          case QMessageBox::Save:
+              if (fileName != "") on_saveAction_triggered();
+                else on_saveAsAction_triggered();
+              break;
+          case QMessageBox::Discard:
+              break;
+          case QMessageBox::Cancel:
+              cansel = true;
+              break;
+        }
+    }
+    if (cansel) event->ignore();
+        else event->accept();
+}
 
 void MainBmstuPad::on_openFileAction_triggered()
 {
@@ -51,4 +78,9 @@ void MainBmstuPad::on_saveAsAction_triggered()
         fileName = name;
         MainBmstuPad::on_saveAction_triggered();
     }
+}
+
+void MainBmstuPad::on_mainTextEdit_textChanged()
+{
+    textChanged = true;
 }
