@@ -57,6 +57,7 @@ void MainBmstuPad::on_openFileAction_triggered()
             ui->mainTextEdit->append(line);
         }
         ui->saveAction->setEnabled(true);
+        textChanged = false;
         file.close();
     }
 }
@@ -67,6 +68,7 @@ void MainBmstuPad::on_saveAction_triggered()
     {
          QTextDocumentWriter writer(fileName, "plaintext");
          writer.write(ui->mainTextEdit->document());
+         textChanged = false;
     }
 }
 
